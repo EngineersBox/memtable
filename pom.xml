@@ -7,7 +7,7 @@
     <groupId>com.engineersbox</groupId>
     <artifactId>memtable</artifactId>
     <version>0.1.0</version>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
     <name>Memtable</name>
 
     <repositories>
@@ -32,7 +32,7 @@
         <commons-io.version>2.11.0</commons-io.version>
         <commons-collections.version>4.4</commons-collections.version>
         <reflections.version>0.10.2</reflections.version>
-        <guava.version>31.1-jre</guava.version>
+        <guava.version>33.0.0-jre</guava.version>
         <eclipse-collections.version>11.1.0</eclipse-collections.version>
         <error-prone.version>2.23.0</error-prone.version>
 
