@@ -6,12 +6,12 @@ public class Memtable {
 
     public static class Entry {
 
-        public final Object id;
+        public final String id;
         public final Map<String, String> labels;
         public final Object value;
         public Entry next;
 
-        public Entry(final Object id,
+        public Entry(final String id,
                      final Map<String, String> labels,
                      final Object value,
                      final Entry next) {
@@ -21,16 +21,14 @@ public class Memtable {
             this.next = next;
         }
 
-        public Entry(final Object id,
+        public Entry(final String id,
                      final Map<String, String> labels,
                      final Object value) {
             this(id, labels, value, null);
         }
 
         public boolean before(final Entry other) {
-            // TODO: Implement this
-            //       maybe lexicographic ordering and then length by default?
-            return false;
+            return this.id.compareTo(other.id) < 0;
         }
 
     }
@@ -104,7 +102,7 @@ public class Memtable {
             return List.of();
         }
         List<Entry> intersectedEntries = entriesGroup.get(0);
-        for (int i = 1; i < intersectedEntries.size(); i++) {
+        for (int i = 1; i < entriesGroup.size(); i++) {
             intersectedEntries = intersect(
                     intersectedEntries,
                     entriesGroup.get(i)
